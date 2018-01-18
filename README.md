@@ -3,7 +3,9 @@
 
 ## 使用
 在`html`页面中引入`ribbons.js`，`git clone`即可获得，在 `static/`目录下。
+
     <script type="text/javascript" src="path/ribbons.js"></script>
+    
 然后进行初始化
 ```javascript 
 new CanvasRibbons();
