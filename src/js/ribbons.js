@@ -1,20 +1,38 @@
 (function (win) {
-    let CanvasRibbons = function (option) {
-        let defaultOoption = { // eslint-disable-line
-            size: 150, // 彩带的宽度
+    let CanvasRibbons = function (config) {
+        // 默认参数配置
+        let defaultConfig = { // eslint-disable-line
+            size: 90, // 彩带的宽度
             alpha: 0.6, // 透明度
             zIndex: -1 // z-index
+        };
+
+        /**
+         * 判断对象
+         * @param {any} obj
+         * @returns
+         */
+        function isObject(obj) {
+            return Object.prototype.toString.call(obj) === '[object Object]';
+        };
+        if (isObject(config)) {
+            for (var i in config) {
+                if (config.hasOwnProperty(i)) {
+                    defaultConfig[i] = config[i]; // 用户配置
+                }
+            }
         };
         document.addEventListener('touchmove', function (e) {
             e.preventDefault();
         });
-        let canvasRibbon = document.getElementsByTagName('canvas')[0]; // 获取 canvas 背景
-        canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none';
+        let canvasRibbon = document.createElement('canvas'); // 获取 canvas 背景
+        canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;z-index:' + defaultConfig.zIndex;
+        document.getElementsByTagName('body')[0].appendChild(canvasRibbon);
         let ctx = canvasRibbon.getContext('2d'); // 获取canvas 2d上下文
         let dpr = window.devicePixelRatio || 1; // 获取设备像素比
         let width = window.innerWidth; // 获取窗口的文档显示区的宽度
         let height = window.innerHeight; // 获取窗口的文档显示区的高度
-        const RIBBON_HEIGHT = 90;
+        const RIBBON_HEIGHT = defaultConfig.size;
         let path; // 绘制点的路径
         let math = Math;
         let r = 0;
@@ -25,7 +43,7 @@
         canvasRibbon.width = width * dpr;
         canvasRibbon.height = height * dpr;
         ctx.scale(dpr, dpr); // 水平和竖直方向缩放
-        ctx.globalAlpha = 0.6; // 图形透明度
+        ctx.globalAlpha = defaultConfig.alpha; // 图形透明度
 
         /**
          * 背景初始化
@@ -80,7 +98,8 @@
          */
         function _calculateY(y) {
             let temp = y + ((math.random()) * 2 - 1.1) * RIBBON_HEIGHT;
-            return (temp > height || temp < 0) ? _calculateY(temp) : temp;
+            let MaximumTemp = RIBBON_HEIGHT * 0.7;
+            return (temp > height || temp < 0) ? MaximumTemp : temp;
         }
 
         document.onclick = init;
