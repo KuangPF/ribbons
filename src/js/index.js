@@ -1,7 +1,7 @@
 import '../css/reset.scss';
-import './ribbons.js';
+import CanvasRibbons from './ribbons.js';
 
-/* eslint-disable */
+/* eslint-disable */ 
 new CanvasRibbons({
     size: 90, // 彩带的宽度
     alpha: 0.6, // 透明度
