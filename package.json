@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup --config ./rollup.config.js --watch",
+    "dev": "cross-env NODE_ENV=development rollup --config ./rollup.config.js --watch",
+    "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,13 +22,16 @@
   },
   "homepage": "https://github.com/KuangPF/ribbons#readme",
   "devDependencies": {
-    "@babel/core": "7",
-    "@babel/plugin-transform-classes": "7",
-    "@babel/preset-env": "7",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "cross-env": "^5.2.0",
     "rollup": "^1.18.0",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^1.10.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "uglify-es": "^3.3.9"
   }
 }
