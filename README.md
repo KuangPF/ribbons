@@ -1,5 +1,4 @@
 # ribbons
-> 参考 [Evan You](http://evanyou.me)主页，对其重写
 
 ## 使用
 在`html`页面中引入`ribbons.js`，`git clone`即可获得，在 `static/`目录下。
