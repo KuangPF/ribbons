@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript'
 import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
 
 module.exports = {
   input: 'src/index.ts',
@@ -9,17 +10,9 @@ module.exports = {
   },
   plugins: [
     typescript(),
-    babel({
-      babelrc: false,
-      presets: [['@babel/preset-env', { modules: false }]],
-      plugins: [
-        [
-          '@babel/plugin-transform-classes',
-          {
-            loose: true
-          }
-        ]
-      ]
+    babel(),
+    terser({
+      exclude: ['node_modules/**']
     })
   ],
   watch: {
