@@ -116,4 +116,3 @@ export default class Ribbons {
     return option
   }
 }
-
