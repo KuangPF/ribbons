@@ -1,0 +1,26 @@
+{
+  "name": "better-ribbons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup --config ./rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KuangPF/ribbons.git"
+  },
+  "keywords": [
+    "canvas"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KuangPF/ribbons/issues"
+  },
+  "homepage": "https://github.com/KuangPF/ribbons#readme",
+  "devDependencies": {
+    "rollup": "^1.18.0"
+  }
+}
