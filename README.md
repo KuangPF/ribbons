@@ -47,7 +47,7 @@ const ribbonsOption = new Ribbons(
 )
 ```
 
-### 🍺Options
+### 🍺 Options
 
 - **size**
   - Description: The size of each ribbon
