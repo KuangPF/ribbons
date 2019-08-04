@@ -36,7 +36,7 @@ var Ribbons = /** @class */ (function () {
         this.canvasRibbon.width = width * dpr;
         this.canvasRibbon.height = height * dpr;
         this.ctx.scale(dpr, dpr); // 水平和竖直方向缩放
-        this.ctx.globalAlpha = defaultConfig.alpha; // 图形透明度
+        this.ctx.globalAlpha = this.config.alpha; // 图形透明度
         this.ctx.clearRect(0, 0, width, height); // 清除之前绘制内容
         RIBBON_HEIGHT = this.config.size;
         // 初始化 path
@@ -93,6 +93,5 @@ var Ribbons = /** @class */ (function () {
     };
     return Ribbons;
 }());
-//# sourceMappingURL=index.js.map
 
 export default Ribbons;
