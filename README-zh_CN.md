@@ -35,8 +35,9 @@ npm i better-ribbons -S
 初始化一个 `Ribbons` 实例
 
 ```javascript
-const ribbonsInstacne = new Ribbons()
+import Ribbons from 'better-ribbons'
 
+const ribbonsInstacne = new Ribbons()
 /* 自定义参数 */
 const ribbonsOption = new Ribbons(
   {

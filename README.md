@@ -35,8 +35,9 @@ npm i better-ribbons -S
 Initialize a `Ribbons` instance
 
 ```javascript
-const ribbonsInstacne = new Ribbons()
+import Ribbons from 'better-ribbons'
 
+const ribbonsInstacne = new Ribbons()
 /* Custom option */
 const ribbonsOption = new Ribbons(
   {
