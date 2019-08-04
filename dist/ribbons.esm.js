@@ -93,5 +93,6 @@ var Ribbons = /** @class */ (function () {
     };
     return Ribbons;
 }());
+//# sourceMappingURL=index.js.map
 
 export default Ribbons;

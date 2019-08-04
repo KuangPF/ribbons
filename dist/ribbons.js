@@ -99,6 +99,7 @@
       };
       return Ribbons;
   }());
+  //# sourceMappingURL=index.js.map
 
   return Ribbons;
 
