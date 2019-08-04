@@ -1,8 +1,12 @@
 {
   "name": "better-ribbons",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "为背景加上一条飘逸、灵动的彩带",
+  "module": "dist/ribbons.esm.js",
+  "main": "dist/ribbons.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development rollup --config ./rollup.config.js --watch",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
