@@ -1,7 +1,7 @@
 interface IOptions {
   size: number
   alpha: number
-  zIndex: -1
+  zIndex: number
 }
 
 interface IPath {
