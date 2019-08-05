@@ -32,7 +32,7 @@ export default class Ribbons {
   canvasRibbon: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
   path: IPath[]
-  constructor(option: IOptions) {
+  constructor(option?: IOptions) {
     this.config = this.extractConfig(option)
     this.canvasRibbon = document.createElement('canvas')
     this.init()
@@ -55,9 +55,12 @@ export default class Ribbons {
     this.ctx = this.canvasRibbon.getContext('2d')! // 获取canvas 2d上下文
     this.canvasRibbon.width = width * dpr
     this.canvasRibbon.height = height * dpr
-    this.ctx.scale(dpr, dpr) // 水平和竖直方向缩放
-    this.ctx.globalAlpha = this.config.alpha // 图形透明度
-    this.ctx.clearRect(0, 0, width, height) // 清除之前绘制内容
+    if (this.ctx) {
+      this.ctx.scale(dpr, dpr) // 水平和竖直方向缩放
+      this.ctx.globalAlpha = this.config.alpha // 图形透明度
+      this.ctx.clearRect(0, 0, width, height) // 清除之前绘制内容
+    }
+
     RIBBON_HEIGHT = this.config.size
     // 初始化 path
     this.path = [
@@ -78,19 +81,24 @@ export default class Ribbons {
   // drawLine
   drawLine(start: IPath, end: IPath) {
     let ctx = this.ctx
-    ctx.beginPath()
-    ctx.moveTo(start.x, start.y)
-    ctx.lineTo(end.x, end.y)
+    if (ctx) {
+      ctx.beginPath()
+      ctx.moveTo(start.x, start.y)
+      ctx.lineTo(end.x, end.y)
+    }
     // 绘制下一个点
     let nextX = end.x + (Math.random() * 2 - 0.25) * RIBBON_HEIGHT
     let nextY = this._calculateY(end.y)
-    ctx.lineTo(nextX, nextY)
-    ctx.closePath()
+    if (ctx) {
+      ctx.lineTo(nextX, nextY)
+      ctx.closePath()
+    }
     r -= PI_2 / -50
     // 随机生成并设置 canvas 路径16进制颜色
-    ctx.fillStyle = '#' + (((Math.cos(r) * 127 + 128) << 16) | ((Math.cos(r + PI_2 / 3) * 127 + 128) << 8) | (Math.cos(r + (PI_2 / 3) * 2) * 127 + 128)).toString(16)
-    ctx.fill() // 根据当前样式填充路径
-
+    if (ctx) {
+      ctx.fillStyle = '#' + (((Math.cos(r) * 127 + 128) << 16) | ((Math.cos(r + PI_2 / 3) * 127 + 128) << 8) | (Math.cos(r + (PI_2 / 3) * 2) * 127 + 128)).toString(16)
+      ctx.fill() // 根据当前样式填充路径
+    }
     this.path[0] = this.path[1] // 更新当前终点为下一起点
     this.path[1] = {
       x: nextX,
@@ -109,7 +117,7 @@ export default class Ribbons {
     return temp > height || temp < 0 ? MaximumTemp : temp
   }
 
-  extractConfig(option: IOptions): IOptions {
+  extractConfig(option?: IOptions): IOptions {
     if (isObject(option)) {
       return Object.assign(defaultConfig, option)
     }
