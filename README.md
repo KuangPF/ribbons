@@ -1,6 +1,6 @@
 # Ribbons
 
-🌈 Add a flowing, smart ribbon to the background [demo](https://kuangpf.com/ribbons/example/index.html)
+🌈 Add a flowing, smart ribbon to the background. [demo](https://kuangpf.com/ribbons/example/index.html)
 
 ![](https://img.shields.io/npm/v/better-ribbons.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
