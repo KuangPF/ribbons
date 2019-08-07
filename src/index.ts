@@ -22,9 +22,19 @@ const PI_2 = Math.PI * 2
 let RIBBON_HEIGHT = defaultConfig.size
 let r = 0
 
-const isObject = (value: any) => {
+export const isObject = (value: any) => {
   const type = typeof value
   return value !== null && (type === 'object' || type === 'function')
+}
+
+export const deepClone = (obj: any) => {
+  if (!isObject(obj)) return
+  let target: any = obj instanceof Array ? [] : new Object()
+  Object.keys(obj).forEach(function(key) {
+    // 递归遍历
+    target[key] = isObject(obj[key]) ? deepClone(obj[key]) : obj[key]
+  })
+  return target
 }
 
 export default class Ribbons {
@@ -119,7 +129,7 @@ export default class Ribbons {
 
   extractConfig(option?: IOptions): IOptions {
     if (isObject(option)) {
-      return Object.assign(defaultConfig, option)
+      return Object.assign(deepClone(defaultConfig), option)
     }
     return defaultConfig
   }
