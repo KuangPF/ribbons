@@ -9,3 +9,4 @@ temp
 .versions
 .changelog
 .vscode
+coverage/
