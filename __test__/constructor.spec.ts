@@ -1,4 +1,4 @@
-import Ribbons, { isObject } from '../src/index'
+import Ribbons from '../src/index'
 
 afterEach(() => {
   jest.clearAllMocks()
@@ -18,8 +18,3 @@ it('it will be use defaultConfig', () => {
   expect(defaultConfigRibbos.config.zIndex).toBe(-1)
 })
 
-it('isObject', () => {
-  expect(isObject(null)).toEqual(false)
-  expect(isObject([])).toEqual(true)
-  expect(isObject({})).toEqual(true)
-})
