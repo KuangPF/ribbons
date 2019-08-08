@@ -13,14 +13,14 @@
 **CDN**
 
 ```html
-<script src="https://unpkg.com/better-ribbons@1.0.1/dist/ribbons.js"></script>
+<script src="https://unpkg.com/better-ribbons@1.0.2/dist/ribbons.js"></script>
 ```
 
 如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：
 
 ```html
 <script type="module">
-  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.1/dist/ribbons.esm.js'
+  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.2/dist/ribbons.esm.js'
 </script>
 ```
 
