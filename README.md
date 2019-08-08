@@ -13,14 +13,14 @@ English | [简体中文](./README-zh_CN.md)
 **CDN**
 
 ```html
-<script src="https://unpkg.com/better-ribbons@1.0.2/dist/ribbons.js"></script>
+<script src="https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.js"></script>
 ```
 
 If you are using native ES Modules, there is also an ES Modules compatible build:
 
 ```html
 <script type="module">
-  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.2/dist/ribbons.esm.js'
+  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.esm.js'
 </script>
 ```
 
