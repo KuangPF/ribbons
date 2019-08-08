@@ -5,7 +5,6 @@
 ![](https://img.shields.io/npm/v/better-ribbons.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-
 简体中文 | [English](./README.md)
 
 ### 📦 安装
@@ -13,14 +12,14 @@
 **CDN**
 
 ```html
-<script src="https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.js"></script>
 ```
 
 如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：
 
 ```html
 <script type="module">
-  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.esm.js'
+  import Ribbons from 'https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.esm.js'
 </script>
 ```
 

@@ -5,7 +5,6 @@
 ![](https://img.shields.io/npm/v/better-ribbons.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-
 English | [简体中文](./README-zh_CN.md)
 
 ### 📦 Install
@@ -13,14 +12,14 @@ English | [简体中文](./README-zh_CN.md)
 **CDN**
 
 ```html
-<script src="https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.js"></script>
 ```
 
 If you are using native ES Modules, there is also an ES Modules compatible build:
 
 ```html
 <script type="module">
-  import Ribbons from 'https://unpkg.com/better-ribbons@1.0.3/dist/ribbons.esm.js'
+  import Ribbons from 'https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.esm.js'
 </script>
 ```
 
@@ -51,11 +50,13 @@ const ribbonsOption = new Ribbons(
 ### 🍺 Options
 
 - **size**
+
   - Description: The size of each ribbon
   - Default: 90
   - Type: `number`
 
 - **alpha**
+
   - Description: ribbon transparency
   - Default: 0.6
   - Type: `number`
