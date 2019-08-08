@@ -3,6 +3,8 @@
 🌈 为背景加上一条飘逸、灵动的彩带 [demo](https://kuangpf.com/ribbons/example/index.html)
 
 ![](https://img.shields.io/npm/v/better-ribbons.svg?style=flat)
+[![Build Status](https://travis-ci.org/KuangPF/ribbons.svg?branch=master)](https://travis-ci.org/KuangPF/ribbons)
+[![codecov](https://codecov.io/gh/KuangPF/ribbons/branch/master/graph/badge.svg)](https://codecov.io/gh/KuangPF/ribbons)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 简体中文 | [English](./README.md)

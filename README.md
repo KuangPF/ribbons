@@ -3,6 +3,8 @@
 🌈 Add a flowing, smart ribbon to the background. [demo](https://kuangpf.com/ribbons/example/index.html)
 
 ![](https://img.shields.io/npm/v/better-ribbons.svg?style=flat)
+[![Build Status](https://travis-ci.org/KuangPF/ribbons.svg?branch=master)](https://travis-ci.org/KuangPF/ribbons)
+[![codecov](https://codecov.io/gh/KuangPF/ribbons/branch/master/graph/badge.svg)](https://codecov.io/gh/KuangPF/ribbons)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 English | [简体中文](./README-zh_CN.md)
