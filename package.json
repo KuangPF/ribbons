@@ -32,6 +32,7 @@
     "@types/jest": "^24.0.16",
     "assert": "^2.0.0",
     "babel-plugin-external-helpers": "^6.22.0",
+    "codecov": "^3.5.0",
     "cross-env": "^5.2.0",
     "jest": "^24.8.0",
     "jest-canvas-mock": "^2.1.0",
