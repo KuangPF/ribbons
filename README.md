@@ -39,7 +39,7 @@ Initialize a `Ribbons` instance
 import Ribbons from 'better-ribbons'
 
 const ribbonsInstacne = new Ribbons()
-/* Custom option */
+/* custom option */
 const ribbonsOption = new Ribbons(
   {
     size: 100,
