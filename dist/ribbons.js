@@ -105,11 +105,7 @@
               y: nextY
           };
       };
-      /**
-       * 计算下一个点 y 的值
-       * @param {number} y
-       * @returns
-       */
+      // 计算下一个点 y 的值
       Ribbons.prototype._calculateY = function (y) {
           var temp = y + (Math.random() * 2 - 1.1) * RIBBON_HEIGHT;
           var MaximumTemp = RIBBON_HEIGHT * 0.7;

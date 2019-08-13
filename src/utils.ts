@@ -7,7 +7,7 @@ export const cloneDeep = (obj: any) => {
   if (!isObject(obj)) return obj
   let target: any = obj instanceof Array ? [] : new Object()
   Object.keys(obj).forEach(function(key) {
-    // 递归遍历
+    // recursive traversal
     target[key] = isObject(obj[key]) ? cloneDeep(obj[key]) : obj[key]
   })
   return target

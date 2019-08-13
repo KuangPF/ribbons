@@ -12,14 +12,14 @@ interface IPath {
 }
 
 let defaultConfig: IOptions = {
-  size: 90, // 彩带的宽度
-  alpha: 0.6, // 透明度
+  size: 90, // ribbon width
+  alpha: 0.6, // transparency
   zIndex: -1 // z-index
 }
 
-const dpr = window.devicePixelRatio || 1 // 获取设备像素比
-const width = window.innerWidth // 获取窗口的文档显示区的宽度
-const height = window.innerHeight // 获取窗口的文档显示区的高度
+const dpr = window.devicePixelRatio || 1 // get devicePixelRatio
+const width = window.innerWidth // innerWidth
+const height = window.innerHeight // innerHeight
 const PI_2 = Math.PI * 2
 let RIBBON_HEIGHT = defaultConfig.size
 let r = 0
@@ -49,17 +49,17 @@ export default class Ribbons {
   initCanvas() {
     this.canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;z-index:' + defaultConfig.zIndex
     document.getElementsByTagName('body')[0].appendChild(this.canvasRibbon)
-    this.ctx = this.canvasRibbon.getContext('2d')! // 获取canvas 2d上下文
+    this.ctx = this.canvasRibbon.getContext('2d')! // get canvas context
     this.canvasRibbon.width = width * dpr
     this.canvasRibbon.height = height * dpr
     if (this.ctx) {
-      this.ctx.scale(dpr, dpr) // 水平和竖直方向缩放
-      this.ctx.globalAlpha = this.config.alpha // 图形透明度
-      this.ctx.clearRect(0, 0, width, height) // 清除之前绘制内容
+      this.ctx.scale(dpr, dpr)
+      this.ctx.globalAlpha = this.config.alpha
+      this.ctx.clearRect(0, 0, width, height)
     }
 
     RIBBON_HEIGHT = this.config.size
-    // 初始化 path
+    // init path
     this.path = [
       {
         x: 0,
@@ -83,7 +83,7 @@ export default class Ribbons {
       ctx.moveTo(start.x, start.y)
       ctx.lineTo(end.x, end.y)
     }
-    // 绘制下一个点
+    // draw next point
     let nextX = end.x + (Math.random() * 2 - 0.25) * RIBBON_HEIGHT
     let nextY = this._calculateY(end.y)
     if (ctx) {
@@ -91,23 +91,19 @@ export default class Ribbons {
       ctx.closePath()
     }
     r -= PI_2 / -50
-    // 随机生成并设置 canvas 路径16进制颜色
+    // Randomly generate and set the canvas path hex color
     if (ctx) {
       ctx.fillStyle = '#' + (((Math.cos(r) * 127 + 128) << 16) | ((Math.cos(r + PI_2 / 3) * 127 + 128) << 8) | (Math.cos(r + (PI_2 / 3) * 2) * 127 + 128)).toString(16)
-      ctx.fill() // 根据当前样式填充路径
+      ctx.fill()
     }
-    this.path[0] = this.path[1] // 更新当前终点为下一起点
+    this.path[0] = this.path[1] // Update current endpoint to next starting point
     this.path[1] = {
       x: nextX,
       y: nextY
     }
   }
 
-  /**
-   * 计算下一个点 y 的值
-   * @param {number} y
-   * @returns
-   */
+  // Calculate the value of the next point y
   _calculateY(y: number): number {
     let temp = y + (Math.random() * 2 - 1.1) * RIBBON_HEIGHT
     let MaximumTemp = RIBBON_HEIGHT * 0.7

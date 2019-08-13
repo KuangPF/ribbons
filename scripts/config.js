@@ -1,5 +1,5 @@
 const path = require('path')
-const typescript = require('rollup-plugin-typescript')
+const typescript = require('rollup-plugin-typescript2')
 const babel = require('rollup-plugin-babel')
 const version = process.env.VERSION || require('../package.json').version
 const ENV = process.env.NODE_ENV
