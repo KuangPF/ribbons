@@ -16,7 +16,7 @@
 **CDN**
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.min.js"></script>
 ```
 
 如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：
