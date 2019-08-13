@@ -16,14 +16,14 @@ English | [简体中文](./README-zh_CN.md)
 **CDN**
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/better-ribbons/dist/ribbons.min.js"></script>
 ```
 
 If you are using native ES Modules, there is also an ES Modules compatible build:
 
 ```html
 <script type="module">
-  import Ribbons from 'https://cdn.jsdelivr.net/npm/better-ribbons@latest/dist/ribbons.esm.js'
+  import Ribbons from 'https://cdn.jsdelivr.net/npm/better-ribbons/dist/ribbons.esm.js'
 </script>
 ```
 
