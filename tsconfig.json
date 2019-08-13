@@ -4,16 +4,22 @@
     "composite": true,
     "moduleResolution": "node",
     "target": "es5",
-    "module": "es2015",
+    "module":"es2015",
     "lib": ["es2015", "es2016", "es2017", "dom"],
     "esModuleInterop": true,
     "strictPropertyInitialization": false,
     "strict": true,
     "preserveSymlinks": true,
     "declaration": true,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": false,
-    "typeRoots": ["node_modules/@types"]
-  }
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": ["./src/*.ts"],
+  "exclude": ["./__test__/**/*.ts", "./__setups__/**/*.ts"]
 }
