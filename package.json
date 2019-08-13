@@ -3,13 +3,16 @@
   "version": "1.0.4",
   "description": "为背景加上一条飘逸、灵动的彩带",
   "module": "dist/ribbons.esm.js",
-  "main": "dist/ribbons.js",
+  "main": "dist/ribbons.min.js",
+  "unpkg": "dist/ribbons.min.js",
+  "jsdelivr": "dist/ribbons.min.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup --config ./rollup.config.js --watch",
-    "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
+    "dev": "cross-env NODE_ENV=development rollup -w -c scripts/config.js --environment TARGET:web-full-dev",
+    "dev:esm": "cross-env NODE_ENV=development rollup -w -c scripts/config.js --environment TARGET:web-full-esm",
+    "build": "cross-env NODE_ENV=production node ./scripts/build.js",
     "release": "sh ./release.sh",
     "test": "jest --coverage"
   },
@@ -38,11 +41,14 @@
     "jest-canvas-mock": "^2.1.0",
     "rollup": "^1.18.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript": "^1.0.1",
     "ts-jest": "^24.0.2",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3",
     "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "terser": "^4.1.4",
+    "zlib": "^1.0.5"
   }
 }
