@@ -1,5 +1,5 @@
 /*!
- * Ribbons.js v1.0.6
+ * Ribbons.js v1.0.7
  * (c) 2019 KuangPF
  * Released under the MIT License.
  */
@@ -18,7 +18,7 @@
           return obj;
       var target = obj instanceof Array ? [] : new Object();
       Object.keys(obj).forEach(function (key) {
-          // 递归遍历
+          // recursive traversal
           target[key] = isObject(obj[key]) ? cloneDeep(obj[key]) : obj[key];
       });
       return target;
@@ -29,9 +29,9 @@
       alpha: 0.6,
       zIndex: -1 // z-index
   };
-  var dpr = window.devicePixelRatio || 1; // 获取设备像素比
-  var width = window.innerWidth; // 获取窗口的文档显示区的宽度
-  var height = window.innerHeight; // 获取窗口的文档显示区的高度
+  var dpr = window.devicePixelRatio || 1; // get devicePixelRatio
+  var width = window.innerWidth; // innerWidth
+  var height = window.innerHeight; // innerHeight
   var PI_2 = Math.PI * 2;
   var RIBBON_HEIGHT = defaultConfig.size;
   var r = 0;
@@ -54,16 +54,16 @@
       Ribbons.prototype.initCanvas = function () {
           this.canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;z-index:' + defaultConfig.zIndex;
           document.getElementsByTagName('body')[0].appendChild(this.canvasRibbon);
-          this.ctx = this.canvasRibbon.getContext('2d'); // 获取canvas 2d上下文
+          this.ctx = this.canvasRibbon.getContext('2d'); // get canvas context
           this.canvasRibbon.width = width * dpr;
           this.canvasRibbon.height = height * dpr;
           if (this.ctx) {
-              this.ctx.scale(dpr, dpr); // 水平和竖直方向缩放
-              this.ctx.globalAlpha = this.config.alpha; // 图形透明度
-              this.ctx.clearRect(0, 0, width, height); // 清除之前绘制内容
+              this.ctx.scale(dpr, dpr);
+              this.ctx.globalAlpha = this.config.alpha;
+              this.ctx.clearRect(0, 0, width, height);
           }
           RIBBON_HEIGHT = this.config.size;
-          // 初始化 path
+          // init path
           this.path = [
               {
                   x: 0,
@@ -86,7 +86,7 @@
               ctx.moveTo(start.x, start.y);
               ctx.lineTo(end.x, end.y);
           }
-          // 绘制下一个点
+          // draw next point
           var nextX = end.x + (Math.random() * 2 - 0.25) * RIBBON_HEIGHT;
           var nextY = this._calculateY(end.y);
           if (ctx) {
@@ -94,18 +94,18 @@
               ctx.closePath();
           }
           r -= PI_2 / -50;
-          // 随机生成并设置 canvas 路径16进制颜色
+          // Randomly generate and set the canvas path hex color
           if (ctx) {
               ctx.fillStyle = '#' + (((Math.cos(r) * 127 + 128) << 16) | ((Math.cos(r + PI_2 / 3) * 127 + 128) << 8) | (Math.cos(r + (PI_2 / 3) * 2) * 127 + 128)).toString(16);
-              ctx.fill(); // 根据当前样式填充路径
+              ctx.fill();
           }
-          this.path[0] = this.path[1]; // 更新当前终点为下一起点
+          this.path[0] = this.path[1]; // Update current endpoint to next starting point
           this.path[1] = {
               x: nextX,
               y: nextY
           };
       };
-      // 计算下一个点 y 的值
+      // Calculate the value of the next point y
       Ribbons.prototype._calculateY = function (y) {
           var temp = y + (Math.random() * 2 - 1.1) * RIBBON_HEIGHT;
           var MaximumTemp = RIBBON_HEIGHT * 0.7;

@@ -1,5 +1,5 @@
 /*!
- * Ribbons.js v1.0.6
+ * Ribbons.js v1.0.7
  * (c) 2019 KuangPF
  * Released under the MIT License.
  */
