@@ -1,6 +1,6 @@
 {
   "name": "better-ribbons",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "为背景加上一条飘逸、灵动的彩带",
   "module": "dist/ribbons.esm.js",
   "main": "dist/ribbons.min.js",
