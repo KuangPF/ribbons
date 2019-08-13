@@ -10,3 +10,4 @@ temp
 .changelog
 .vscode
 coverage/
+.rpt2_cache
