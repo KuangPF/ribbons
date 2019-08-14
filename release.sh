@@ -23,5 +23,5 @@ then
   git push origin refs/tags/v"$VERSION"
   git push origin master
   
-  npm publish
+  npm publish --registry=https://registry.npmjs.org
 fi
