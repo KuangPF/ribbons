@@ -1,7 +1,7 @@
 {
   "name": "better-ribbons",
   "version": "1.0.7",
-  "description": "为背景加上一条飘逸、灵动的彩带",
+  "description": "🌈 Add a flowing, smart ribbon to the background.",
   "module": "dist/ribbons.esm.js",
   "main": "dist/ribbons.min.js",
   "unpkg": "dist/ribbons.min.js",
