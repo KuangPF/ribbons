@@ -1,8 +1,11 @@
 import { isObject, cloneDeep } from './utils'
 
 interface IOptions {
+  /** ribbon width */
   size: number
+  /** ribbon transparency */
   alpha: number
+  /** z-index */
   zIndex: number
 }
 
@@ -29,7 +32,7 @@ export default class Ribbons {
   canvasRibbon: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
   path: IPath[]
-  constructor(option?: IOptions) {
+  constructor(option?: Partial<IOptions>) {
     this.config = this.extractConfig(option)
     this.canvasRibbon = document.createElement('canvas')
     this.init()
@@ -110,7 +113,7 @@ export default class Ribbons {
     return temp > height || temp < 0 ? MaximumTemp : temp
   }
 
-  extractConfig(option?: IOptions): IOptions {
+  extractConfig(option?: Partial<IOptions>): IOptions {
     if (isObject(option)) {
       return Object.assign(cloneDeep(defaultConfig), option)
     }
