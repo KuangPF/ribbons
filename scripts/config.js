@@ -11,6 +11,9 @@ const banner =
   ` * (c) ${new Date().getFullYear()} KuangPF\n` +
   ' * Released under the MIT License.\n' +
   ' */'
+const typescriptPlugin = typescript({
+  useTsconfigDeclarationDir: true
+})
 
 const resolve = p => path.resolve(__dirname, '../', p)
 
@@ -20,7 +23,7 @@ const builds = {
     dest: resolve('dist/ribbons.min.js'),
     format: 'umd',
     env: 'production',
-    plugins: [typescript(), babel()],
+    plugins: [typescriptPlugin, babel()],
     moduleName: 'Ribbons',
     banner
   },
@@ -29,7 +32,7 @@ const builds = {
     dest: resolve('dist/ribbons.js'),
     format: 'umd',
     env: 'development',
-    plugins: [typescript(), babel()],
+    plugins: [typescriptPlugin, babel()],
     moduleName: 'Ribbons',
     banner
   },
@@ -37,7 +40,7 @@ const builds = {
     entry: resolve('src/index.ts'),
     dest: resolve('dist/ribbons.esm.js'),
     format: 'esm',
-    plugins: [typescript(), babel()],
+    plugins: [typescriptPlugin, babel()],
     banner
   }
 }
