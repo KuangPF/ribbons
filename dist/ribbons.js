@@ -1,5 +1,5 @@
 /*!
- * Ribbons.js v1.0.9
+ * Ribbons.js v1.0.10
  * (c) 2019 KuangPF
  * Released under the MIT License.
  */
@@ -52,7 +52,7 @@
       };
       // init canvas
       Ribbons.prototype.initCanvas = function () {
-          this.canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;z-index:' + defaultConfig.zIndex;
+          this.canvasRibbon.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;z-index:' + this.config.zIndex;
           document.getElementsByTagName('body')[0].appendChild(this.canvasRibbon);
           this.ctx = this.canvasRibbon.getContext('2d'); // get canvas context
           this.canvasRibbon.width = width * dpr;
