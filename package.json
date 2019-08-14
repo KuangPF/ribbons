@@ -1,6 +1,6 @@
 {
   "name": "better-ribbons",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "🌈 Add a flowing, smart ribbon to the background.",
   "module": "dist/ribbons.esm.js",
   "main": "dist/ribbons.min.js",
